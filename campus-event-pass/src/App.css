@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #d4145a);
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Registration Form */
+
+.form-card {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.form-card label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  outline: none;
+  border-color: #6a11cb;
+}
+
+.error {
+  color: #d00000;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.form-card button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #6a11cb;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-card button:hover {
+  background: #5310a5;
+}
+
+/* Event Pass */
+
+.pass-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.event-pass {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pass-header {
+  background: #222;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pass-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.pass-event {
+  text-align: center;
+  padding: 25px;
+  background: #f5f0ff;
+}
+
+.pass-event h1 {
+  margin: 0;
+  color: #6a11cb;
+}
+
+.pass-event p {
+  color: #666;
+}
+
+.pass-details {
+  padding: 25px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #eee;
+  gap: 20px;
+}
+
+.detail span {
+  color: #777;
+}
+
+.detail strong {
+  text-align: right;
+}
+
+.pass-status {
+  margin: 20px 25px;
+  padding: 13px;
+  text-align: center;
+  border-radius: 8px;
+  background: #e8f8ee;
+  color: #178a43;
+  font-weight: bold;
+}
+
+.pass-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pass-buttons button {
+  flex: 1;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background: white;
+  color: #6a11cb;
+}
+
+.pass-buttons .reset-button {
+  background: #222;
+  color: white;
+}
+
+.pass-buttons button:hover {
+  opacity: 0.85;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 15px;
+  }
+
+  .form-card {
+    padding: 25px;
+  }
+
+  .detail {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .detail strong {
+    text-align: left;
+  }
+
+  .pass-buttons {
+    flex-direction: column;
+  }
+}
