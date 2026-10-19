@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from "react"; //store and manage data using functional components
 
 function RegistrationForm({ onSubmit }) {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({ /* Stores the user's input data for the registration form */
     name: "",
     email: "",
     phone: "",
@@ -10,7 +10,7 @@ function RegistrationForm({ onSubmit }) {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { //when user changes input, it runs, e = event object
     const { name, value } = e.target;
 
     setFormData({
@@ -45,7 +45,7 @@ function RegistrationForm({ onSubmit }) {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //runs when user submits the form
     e.preventDefault();
 
     const validationErrors = validateForm();
@@ -55,12 +55,12 @@ function RegistrationForm({ onSubmit }) {
       return;
     }
 
-    setErrors({});
+    setErrors({}); //clears previous errors
     onSubmit(formData);
   };
 
   return (
-    <div className="form-card">
+    <div className="form-card"> {/*JSX allows us to write HTML-like syntax inside JavaScript*/}
       <h2>Campus Event Registration</h2>
       <p className="subtitle">
         Register for your favourite campus event
@@ -74,34 +74,38 @@ function RegistrationForm({ onSubmit }) {
           name="name"
           placeholder="Enter your name"
           value={formData.name}
-          onChange={handleChange}
+          onChange={handleChange} // updates react state
         />
-        {errors.name && <p className="error">{errors.name}</p>}
-
+        {errors.name && <p className="error">{errors.name}</p>} 
 
         <label>Email</label>
         <input
           type="email"
-          name="email"
+          name="email" // Identifies this field for handleChange
           placeholder="Enter your email"
-          value={formData.email}
-          onChange={handleChange}
+          value={formData.email} // Controlled input: value comes from React state
+          onChange={handleChange} // Updates state when user types
         />
+
+        {/* Conditional rendering: shows error only if it exists */}
         {errors.email && <p className="error">{errors.email}</p>}
 
 
         <label>Phone Number</label>
         <input
           type="text"
-          name="phone"
+          name="phone" // Identifies this field for handleChange
           placeholder="Enter 10-digit phone number"
           value={formData.phone}
           onChange={handleChange}
         />
+
         {errors.phone && <p className="error">{errors.phone}</p>}
 
 
         <label>Select Event</label>
+
+        {/* Dropdown for selecting an event */}
         <select
           name="event"
           value={formData.event}
@@ -117,6 +121,7 @@ function RegistrationForm({ onSubmit }) {
         {errors.event && <p className="error">{errors.event}</p>}
 
 
+        {/* Submits the form and triggers the form's onSubmit handler */}
         <button type="submit">
           Generate Event Pass
         </button>
@@ -126,4 +131,4 @@ function RegistrationForm({ onSubmit }) {
   );
 }
 
-export default RegistrationForm;
+export default RegistrationForm; // Makes component available to other files
